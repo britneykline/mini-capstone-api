@@ -1,0 +1,15 @@
+
+### Index
+GET http://localhost:3000/products
+
+### Create
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name" : "coffee",
+  "price" : 2,
+  "image_url" : "none", 
+  "description" : "roasted and toasty",
+  "inventory" : "100"
+}

@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Product.create!([
+  {name: "Milk", price: "3.0", image_url: nil, description: "2%, Calcium Fortified", inventory: nil},
+  {name: "Ramen", price: "0.0", image_url: nil, description: "Instant Noodles, Chicken Flavored", inventory: nil},
+  {name: "Ramen", price: "1.0", image_url: nil, description: "Instant Noodles, Chicken Flavored", inventory: nil},
+  {name: "apple", price: "2.0", image_url: "none", description: "Granny Smith", inventory: nil},
+  {name: "apple", price: "2.0", image_url: "none", description: "Granny Smith", inventory: nil},
+  {name: "apple", price: "2.0", image_url: "none", description: "Granny Smith", inventory: nil},
+  {name: "apple", price: "2.0", image_url: "none", description: "Granny Smith", inventory: nil},
+  {name: "apple", price: "2.0", image_url: "none", description: "Granny Smith", inventory: nil},
+  {name: "apple", price: "2.0", image_url: "none", description: "Fuji", inventory: nil},
+  {name: "apple", price: "2.0", image_url: "none", description: "Fuji", inventory: nil},
+  {name: "apple", price: "2.0", image_url: "none", description: "Fuji", inventory: nil}
+])
