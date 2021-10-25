@@ -28,4 +28,5 @@ class ProductsController < ApplicationController
       render json: {errors: product.errors.full_messages}
     end
   end
+  
 end

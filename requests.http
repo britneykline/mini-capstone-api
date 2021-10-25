@@ -13,3 +13,23 @@ Content-Type: application/json
   "description" : "roasted and toasty",
   "inventory" : "100"
 }
+
+### Create new user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Test name",
+  "email": "test@test.com",
+  "password": "password",
+  "pasword_confirmation": "password"
+}
+
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}
