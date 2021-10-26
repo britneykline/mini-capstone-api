@@ -1,4 +1,12 @@
 class SessionsController < ApplicationController
+  # login
+  # inputs
+  # email
+  # password
+
+  # output
+  # jwt
+  
   def create
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])

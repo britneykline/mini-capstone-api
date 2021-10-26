@@ -1,6 +1,7 @@
 
 ### Index
 GET http://localhost:3000/products
+#Authorization: Bearer 
 
 ### Create
 POST http://localhost:3000/products
@@ -19,10 +20,10 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Test name",
-  "email": "test@test.com",
-  "password": "password",
-  "pasword_confirmation": "password"
+  "name": "Britney Foor",
+  "email": "britney.k.foor@gmail.com",
+  "password": "b43127nk",
+  "password_confirmation": "password"
 }
 
 ### Sessions create (login)

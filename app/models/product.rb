@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   validates :description, length: {maximum: 500}
   validates :name, uniqueness: true
   belongs_to :Supplier1
+  has_many :orders
   has_many :photos
  
   def is_discounted?
