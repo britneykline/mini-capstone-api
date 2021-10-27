@@ -11,5 +11,16 @@ post "/users" => "users#create"
 
 post "/sessions" => "sessions#create"
 
+###orders index
+get '/orders' => 'orders#index'
+
+###orders show
+get '/orders' => 'orders#show'
+
+###order create
+post '/orders' => 'orders#create'
+
+###order update
+put '/models' => 'models#update'
 
 end 
