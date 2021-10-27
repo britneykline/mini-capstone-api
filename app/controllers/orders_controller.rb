@@ -1,7 +1,9 @@
 class OrdersController < ApplicationController
+  before_action: authenticate_user
+  
   ###index
   def index
-    orders = Order.all
+    orders = Order.where(user_id: current_user.id)
     render json: orders.as_json
   end 
 
@@ -13,13 +15,19 @@ class OrdersController < ApplicationController
 
   ###create
   def create
+    product = Product.find_by(id: params[:product_id])
+    calculated_subtotal = params[:quantity].to_i * product.price
+    tax_rate = 0.07
+    calculated_tax = calculated_subtotal * tax_rate
+    calculated_total = calculated_tax + calculated_subtotal
+    
     order = Order.new(
-      user_id: params[:user_id],
+      user_id: current_user.id,
       product_id: params[:product_id],
       quantity: params[:quantity],
-      subtotal: params[:subtotal],
-      tax: params[:tax],
-      total: params[:total]
+      subtotal: calculated_subtotal,
+      tax: calculated_tax,
+      total: calculated_total
     )
     order.save
     if order.save
@@ -37,6 +45,18 @@ class OrdersController < ApplicationController
       render json: { message: "Order updated successfully" }
     else
       render json: { message: "Order not updated successfully", errors: order.errors } 
+    end
+  end
+
+  def authenticate_user 
+    unless current_user
+      render json: { message: "Must be logged in for this action"}, status: :unauthorized
+    end
+  end
+
+  def authenticate_user 
+    unless current_user.admin
+      render json: { message: "Must be logged in for this action"}, status: :unauthorized
     end
   end
 
