@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authentication_admin, only: [:create, :update, :destroy]
+  #before_action :authentication_admin, only: [:create, :update, :destroy]
 
   def index
     products = Product.all
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
       price: params[:price],
       image_url: params[:image_url],
       description: params[:description],
-      supplier_id: params[:supplier_id]
+      supplier_id: params[:supplier_id],
       inventory: params[:integer]
     )
     product.save

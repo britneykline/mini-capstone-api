@@ -1,19 +1,20 @@
-@jwt = 
+#@jwt = 
 
 ### Index
 GET http://localhost:3000/products
-#Authorization: Bearer 
+
 
 ### Create
 POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "name" : "coffee",
-  "price" : 2,
-  "image_url" : "none", 
-  "description" : "roasted and toasty",
-  "inventory" : "100"
+  "name" : "soup",
+  "price" : 3, 
+  "image_url" : "none",
+  "description" : "vegetable",
+  "inventory" : "101",
+  "supplier_id" : 
 }
 
 ### Create new user
@@ -23,7 +24,7 @@ Content-Type: application/json
 {
   "name": "Tony Foor",
   "email": "tony@gmail.com",
-  "password": "password",
+  "password_digest": "password",
   "password_confirmation": "password"
 }
 
