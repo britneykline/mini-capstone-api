@@ -24,7 +24,7 @@ Content-Type: application/json
 {
   "name": "Tony Foor",
   "email": "tony@gmail.com",
-  "password_digest": "password",
+  "password_degest": "password",
   "password_confirmation": "password"
 }
 
